@@ -19,6 +19,24 @@ submit.on("click", function() {
 
     console.log(inputValue);
 
+    // Similarly, get input element and value for each other filter
+    // var citySearch = d3.select("#cityfilter");
+    // var cityVal = citySearch.property("value");
+
+    // var stateSearch =d3.select("#statefilter");
+    // var stateVal = stateSearch.property("value");
+
+    // var countrySearch = d3.select("countryfilter");
+    // var countryVal = countrySearch.property("value");
+
+    // var shapeSearch =d3.select("shapefilter");
+    // var shapeVal = shapeSearch.property("value");
+
+    //console.log(cityVal);
+    //console.log(stateVal);
+    //console.log(countryVal);
+    //console.log(shapeVal);
+
     // Filter data based on user input value
     var filteredData = tableData.filter(sighting => sighting.datetime === inputValue);
     
@@ -32,7 +50,7 @@ submit.on("click", function() {
         var row = tbody.append("tr");
 
         // Loop through each entry and get the key and value for each item
-        Object.entries(sighting).forEach(function([key, value]) {
+        Object.entries(sighting).forEach(([key, value]) => {
         console.log(key, value);
 
         // Append a cell to the row for each value
